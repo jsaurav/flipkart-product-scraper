@@ -5,6 +5,7 @@ package com.techidiocy.flipkart.scraper.service;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.LinkedList;
 import java.util.List;
@@ -26,11 +27,13 @@ public class FlipkartProductScraper {
 		List<Item> itemList = new LinkedList<Item>();
 		items.setItems(itemList);
 		String url = ApplicationConstants.SEARCH_URL + itemName;
-		File input = new File("C:/saurav/assignments/src/main/resources/htmlpage/flipkart.html");
+		File input = new File(ApplicationConstants.STATIC_FILE_LOCATION);
+		
 		
 		Document doc = null;
 		try {
 		    doc = Jsoup.parse(new URL(url),1000*60);
+		    throw new IOException();
 		} catch(IOException io) {
 			//Test html page in case net connectivity is not there.
 			//our application will parse this html page

@@ -1,5 +1,7 @@
 package com.techidiocy.flipkart.scraper.constants;
 
+import com.techidiocy.flipkart.scraper.service.FlipkartProductScraper;
+
 
 public class ApplicationConstants {
 	
@@ -16,5 +18,8 @@ public class ApplicationConstants {
 	public static final CharSequence FILE_HEADER = "Product Name,Product Price,Rating,Image URL";
 	public static final CharSequence NEW_LINE_CHARACTER = "\n";
 	public static final String COMMA = ",";
+	//public static final String STATIC_FILE_LOCATION = "html/flipkart.html";
+	public static final String STATIC_FILE_LOCATION = FlipkartProductScraper.class.getClassLoader()
+            .getResource("html/flipkart.html").getFile();
 
 }
